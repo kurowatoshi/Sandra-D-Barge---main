@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule ^home$ /index.html [L]
+RewriteRule ^#contact$ /home#contact [L]
+RewriteRule ^about$ /about.html [L]
+RewriteRule ^frcg$ /restoration.html [L]

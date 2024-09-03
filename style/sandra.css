@@ -1,0 +1,984 @@
+
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 50px;
+    position: relative;
+    flex-wrap: wrap; /* Ensures items wrap on small screens */
+}
+
+.navbar-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px; /* Reduced font size */
+    margin-left: 10%;
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 2px solid #C6D090; /* Reduced border thickness */
+    padding: 8px 16px; /* Reduced padding */
+    cursor: pointer;
+    font-size: 16px; /* Reduced font size */
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 20px; /* Reduced border radius */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reduced gap between text and icon */
+}
+
+.dropdown-button a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit;        /* Optionally, inherit color from parent */
+}
+
+.contact-button a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit;        /* Optionally, inherit color from parent */
+}
+
+.dropdown-button:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.dropdown-icon {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-icon svg {
+    fill: #000000;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 2px solid #C6D090; /* Reduced border thickness */
+    border-radius: 8px; /* Reduced border radius */
+    min-width: 160px; /* Reduced minimum width */
+    box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 14px; /* Reduced padding */
+    text-decoration: none;
+    display: block;
+    border-radius: 4px; /* Reduced border radius */
+}
+
+.dropdown-content a:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.contact-button {
+    background-color: #ffffff;
+    border: 2px solid #C6D090 !important; /* Reduced border thickness */
+    color: #000000;
+    border: none;
+    padding: 8px 16px; /* Reduced padding */
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px; /* Reduced font size */
+    border-radius: 20px; /* Reduced border radius */
+}
+
+.contact-button:hover {
+    color: #C6D090;
+    background-color: black;
+}
+
+/* Book Review Section Styles */
+.book-review {
+    border: 3px solid #BEC980;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 60px;
+    margin-left: 220px;
+    margin-right: 220px;
+    margin-bottom: -2.3%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.review-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.review-description {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+}
+
+.review-title-please {
+    padding: 20px;
+}
+
+.review-title-please p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.review-description h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 3px solid #BCC67E;
+    border-radius: 12px;
+    background-color: transparent;
+    font-family: "Imbue", serif;
+    font-weight: 400;
+    display: inline-block;
+}
+
+/* Review Text Container */
+.review-text-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.review-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    font-size: 20px;
+}
+
+.review-text.active {
+    opacity: 1;
+}
+
+/* Star Rating */
+.star-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.star-rating i {
+    color: gold;
+    font-size: 1.25rem;
+}
+
+/* Review Cover */
+.review-cover {
+    flex: 1;
+    text-align: center;
+}
+
+.banner-events {
+    text-align: center; /* Center the content horizontally */
+}
+
+.banner-events iframe {
+    margin-top: 15px;
+    margin-bottom: -50px;
+}
+.banner-events img {
+    display: inline-block; /* Ensures the image is treated as an inline element */
+    width: 60%; /* Make the width responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the image covers the container without stretching */
+}
+
+
+
+/* General styles for the section */
+.author-facebook {
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* Spaces out the description and picture */
+    align-items: center; /* Aligns items vertically centered */
+    padding: 80px; /* Add padding around the section */
+    margin-left: 215px;
+    margin-right: 215px;
+    border: 3px solid #BEC980; /* Add a solid border */
+}
+
+/* General styles for the section */
+.author-restoration-daw {
+    position: relative; /* Establish a positioning context for the background image */
+    display: flex;
+    flex-direction: column; /* Stack text groups vertically */
+    align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center items vertically within the section */
+    padding: 50px; /* Add padding around the section */
+    margin-top: 5px;
+    margin-left: 215px;
+    margin-right: 215px;
+    border: 3px solid #BEC980; 
+    border-radius: 10px;
+    overflow: hidden; /* Ensure content doesn't overflow the section boundaries */
+}
+
+/* Style for the background image container */
+.background-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 50px;
+    width: 50%; /* Adjust based on how much space you want the image to occupy */
+    height: auto; /* Maintain aspect ratio of the image */
+    z-index: -1; /* Place the image behind the text */
+}
+
+/* Ensure the image fills its container */
+.background-image img {
+    width: 60%; /* Make sure the image takes the full width of its container */
+    height: auto; /* Maintain aspect ratio of the image */
+    opacity: 30%; /* Make the image semi-transparent */
+}
+
+/* Style for the groups of text descriptions */
+.text-group {
+    display: flex;
+    align-items: center; /* Center-align items vertically within the group */
+    justify-content: center; /* Center items horizontally within the group */
+    width: 100%; /* Ensure groups take the full width of the section */
+    margin: 10px 0; /* Space above and below each group */
+    padding: 20px; /* Padding around the text groups */
+}
+
+/* Style for individual text items */
+.text-item {
+    display: flex;
+    flex-direction: column; /* Stack title and description vertically */
+    align-items: center; /* Center-align items horizontally */
+    margin: 0 20px; /* Space between individual text items */
+    text-align: center; /* Center text within the item */
+}
+
+.text-item p {
+    text-align: justify; /* Justify text within paragraphs */
+}
+
+.text-item h2 {
+    font-family: "Inika", serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: left;
+    font-size: 24px; /* Increased font size for headings */
+}
+
+/* Style for individual text descriptions */
+.text-description {
+    margin-top: 5px; /* Space between the title and the description */
+    padding: 10px; /* Padding around text */
+}
+
+/* Style for the vertical dividers */
+.divider.vertical {
+    width: 2px; /* Width of the vertical divider */
+    background-color: #BEC980; /* Color of the vertical divider */
+    margin: 0 10px; /* Space on both sides of the divider */
+    height: 100%; /* Full height of the parent container */
+}
+
+/* Style for the horizontal dividers */
+.divider.horizontal {
+    width: 80%; /* Full width of the section */
+    border-top: 2px solid #BEC980; /* Divider line */
+    margin: 10px 0; /* Space above and below the horizontal divider */
+}
+
+.divider1.horizontal {
+    width: 100%; /* Full width of the section */
+    border-top: 2px solid #BEC980; /* Divider line */
+    margin: 20px 0; /* Space above and below the horizontal divider */
+}
+.container-paradimalapas{
+    padding: 20px;
+}
+/* Style for the featured mission section */
+.featured-mission {
+    display: flex; /* Align children horizontally */
+    align-items: center; /* Center-align items vertically within the container */
+    justify-content: center; /* Center items horizontally within the container */
+    width: 100%; /* Full width of the section */
+    padding: 20px; /* Padding around the featured mission section */
+    margin-top: 20px; /* Space above the featured mission section */
+    margin-left: -140px;
+}
+
+/* Style for the featured image */
+.featured-image {
+    margin-right: 40px; /* Space between the image and the headings */
+}
+
+.featured-text{
+    margin-top: -220px;
+}
+.featured-image img {
+    max-width: 350px; /* Limit the size of the image */
+    height: auto; /* Maintain aspect ratio of the image */
+    border-radius: 40px;
+}
+
+/* Style for the h2 headings */
+.featured-mission h2 {
+    font-family: "Inika", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 65px; /* Font size for the headings */
+    margin: 0; /* Remove default margins */
+    text-align: left; /* Center text alignment within the heading */
+}
+
+/* Additional styling for the headings, if needed */
+.featured-mission h2:first-of-type {
+    margin-right: 10px; /* Space between "Featured" and "Mission" if required */
+}
+
+/* Style for the featured missions previous section */
+.featured-missions-prev {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center items vertically */
+    width: 80%; /* Full width of the container */
+    padding: 20px; /* Padding around the container */
+
+}
+
+/* Style for each mission item */
+.featured-mission-item {
+    margin-bottom: 20px; /* Space between images */
+}
+
+/* Style for images within each mission item */
+.featured-mission-item img {
+    border-radius: 20px;
+    max-width: 100%; /* Ensure image doesn't overflow its container */
+    height: auto; /* Maintain aspect ratio of the image */
+    display: block; /* Remove extra space below the image */
+}
+
+
+/* Container for the description and social buttons */
+.description-container {
+    max-width: 60%; /* Adjust based on how much space you want to allocate */
+    margin-top: -10px;
+}
+
+.description-container h2 {
+    font-family: "Inika", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px; /* Increased font size */
+}
+
+/* Description styles */
+.description {
+    margin-bottom: 15px; /* Space between the description and social buttons */
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px; /* Increased font size */
+}
+
+/* Container for social buttons */
+.social-buttons {
+    display: flex;
+    gap: 15px; /* Increased space between buttons */
+}
+
+/* Social button styles */
+.social-buttons a {
+    display: inline-block;
+    width: 70px; /* Increased width */
+    height: 70px; /* Increased height */
+    text-align: center;
+    line-height: 70px; /* Center the icon vertically */
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+    font-size: 28px; /* Increased icon size */
+}
+
+.social-buttons a:hover {
+    background-color: #e0e0e0; /* Adjust hover color */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Social icon styles */
+.social-buttons i {
+    font-size: 28px; /* Increased icon size */
+}
+
+/* Container for the picture */
+.picture-container {
+    max-width: 40%; /* Adjust based on available space */
+}
+
+.picture-container img {
+    width: 100%; /* Makes the picture fit the container */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners for the image */
+}
+
+
+
+
+.review-cover img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Button Container */
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px; /* Space between buttons */
+}
+
+.button-container a {
+    display: inline-block;
+    width: 120px; /* Consistent width */
+    height: 40px; /* Consistent height */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensures the image does not overflow */
+}
+
+.btn-primary img, .btn-secondary img {
+    display: block;
+    width: 100%; /* Ensures the image fills the button */
+    height: 100%; /* Ensures the image fits the button's height */
+    object-fit: cover; /* Ensures the image covers the button area */
+}
+
+
+
+/* Book Flex Section Styles */
+.book-flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border: 3px solid #BEC980;
+    border-radius: 10px;
+    padding-top: 100px;
+    padding-bottom: -20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 60px;
+    margin-left: 220px;
+    margin-right: 220px;
+    margin-bottom: -2.3%;
+}
+
+.book-flex-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Space between book cover and description */
+    max-width: 1200px;
+    width: 100%;
+}
+
+.book-cover {
+    flex: 1;
+    text-align: center;
+}
+
+.book-cover img {
+    max-width: 100%; /* Ensures the image scales down properly */
+    height: auto;
+    margin-bottom: 60px;
+}
+
+.book-description {
+    flex: 2;
+    padding: 80px;
+    margin-top: -90px;
+}
+
+.book-description h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.book-description p {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #000000;
+    font-family: "Judson", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Button Container within .book-flex */
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container a {
+    display: inline-block;
+    width: 150px; /* Increased width for bigger buttons */
+    height: 50px; /* Increased height for bigger buttons */
+    border-radius: 10px; /* Rounded corners for the buttons */
+    overflow: hidden; /* Ensures the image does not overflow */
+}
+
+.btn-primary img, .btn-secondary img {
+    display: block;
+    width: 100%; /* Ensures the image fills the container */
+    height: 100%; /* Ensures the image fits the button's height */
+    object-fit: cover; /* Ensures the image covers the button area */
+}
+.btn-primary img{
+    border: 3px solid black;
+    border-radius: 15%;
+}
+
+/* Slick Carousel Override Styles */
+.slick-slide {
+    text-align: center;
+}
+
+.slick-prev, .slick-next {
+    font-size: 24px;
+    color: #333;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+/* Ensure the slider is centered and maintains consistency */
+.slider1 {
+    display: flex !important;
+    justify-content: center !important; /* Center items horizontally */
+    align-items: center !important; /* Center items vertically */
+    margin-top: 2%;
+    position: relative;
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center; /* Center iframe horizontally */
+    align-items: center; /* Center iframe vertically */
+}
+
+.slick-slide iframe {
+    width: 100%;
+    max-width: 560px; /* Fixed width for consistency */
+    height: 315px; /* Fixed height for consistency */
+    border-radius: 10px; /* Rounded corners for the iframe */
+}
+
+
+.youtube-video {
+    border: 3px solid #BEC980;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 60px;
+    margin-left: 220px;
+    margin-right: 220px;
+    margin-bottom: 10px;
+}
+
+.container-contact {
+    border: 3px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 90px;
+    margin-bottom: -1%;
+    margin-left: 220px;
+    margin-right: 220px;
+    margin-top: -2%;
+    display: flex;
+    justify-content: space-between;
+}
+.contact-us {
+    background-color: #BEC980;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.contact-form, .contact-info {
+    flex: 1;
+    margin: 10px;
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-info{
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px; /* Increased padding for larger size */
+    margin-bottom: 20px;
+    border: 3px solid #FFFFFF; /* 4px white border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: transparent; /* Transparent background */
+    color: #000000; /* Text color */
+    font-size: 16px; /* Font size for better readability */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.contact-form label, .contact-form input, .contact-form textarea {
+    margin-bottom: 20px;
+}
+
+.contact-form textarea{
+    resize: none;
+}
+.contact-form button {
+    background-color: transparent;
+    color: #000000;
+    border: 3px solid #FFFFFF !important; /* 4px white border */
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    align-self: flex-end; /* Aligns the button to the right */
+    margin-top: 20px; /* Space above the button */
+}
+
+
+/* Wrap the button in a container */
+.button-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Aligns the button to the right */
+    margin-top: 20px;
+}
+
+
+.contact-form button:hover {
+    color: #C6D090;
+    background-color: black;
+}
+
+.contact-info {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-info h2 {
+    font-size: 94px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+    color: #333;
+    text-align: right;
+}
+.contact-info h3 {
+    font-size: 94px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+    color: #333;
+    text-align: right;
+    position: relative; /* Required for positioning the pseudo-element */
+    padding-left: 30px; /* Increased space between the line and text */
+}
+
+
+
+.contact-info p {
+    font-size: 21px;
+    line-height: 1.6;
+    color: #333;
+    padding: 60px;
+    margin-top: -30px;
+}
+
+.footer-class {
+    border: 3px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: -0%;
+    margin-left: 220px;
+    margin-right: 220px;
+    margin-top: -2.3%;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center align items horizontally */
+}
+
+.footer-title {
+    text-align: center;
+    font-size: 20px;
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.footer-class p {
+    margin-top: -3px; /* Add spacing between the title and paragraph */
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.about-container {
+    border: 3px solid #C6D090;
+    border-radius: 10px;
+    padding: 90px;
+    margin-bottom: -1%;
+    margin-left: 140px;
+    margin-right: 140px;
+    display: flex;
+    justify-content: space-between;
+}
+.contact-us1 {
+    background-color: #ffffff;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.footer-class1 {
+    border: 3px solid #C6D090;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: -0%;
+    margin-left: 220px;
+    margin-right: 213px;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center align items horizontally */
+}
+.footer-class1 p {
+    margin-top: -3px; /* Add spacing between the title and paragraph */
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Ensure the container takes up available space */
+.author-picture {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;     /* Vertically center */
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    margin-left: 126px;
+    margin-right: 126px;
+    margin-bottom: -10px;
+}
+
+/* Style the image */
+.author-picture img {
+    max-width: 100%;  /* Ensure the image scales within the container */
+    height: auto;     /* Maintain aspect ratio */
+}
+/* Media Queries for Tablets and Mobile */
+@media (width: 1584px){ 
+    /* Style for the background image container */
+.background-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 200px;
+    width: 50%; /* Adjust based on how much space you want the image to occupy */
+    height: auto; /* Maintain aspect ratio of the image */
+    z-index: -1; /* Place the image behind the text */
+}
+
+/* Ensure the image fills its container */
+.background-image img {
+    width: 60%; /* Make sure the image takes the full width of its container */
+    height: auto; /* Maintain aspect ratio of the image */
+    opacity: 30%; /* Make the image semi-transparent */
+}
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+    }
+
+    .navbar-title {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .dropdown-button, .contact-button {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .dropdown-content {
+        min-width: 100%;
+        position: static;
+        box-shadow: none;
+        background-color: #ffffff;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .dropdown-content a {
+        display: inline-block;
+        padding: 12px 20px;
+        color: #000000;
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #d6d1d1;
+    }
+
+    .book-review, .container-contact {
+        margin: 10px 5%;
+        padding: 10px;
+    }
+
+    .book-flex, .book-flex-container {
+        flex-direction: column;
+        margin: 10px 5%;
+    }
+
+    .book-cover img {
+        max-width: 90%;
+    }
+
+    .book-description {
+        padding: 20px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        margin-top: 20px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .button-container a {
+        width: 120px;
+        height: 45px;
+    }
+
+    .slick-slide iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .contact-info {
+        display: none;
+    }
+}
+
+/* Media Queries for Mobile Phones */
+@media (max-width: 480px) {
+    .navbar-title {
+        font-size: 16px;
+    }
+
+    .dropdown-button, .contact-button {
+        font-size: 18px;
+        padding: 12px;
+        border-radius: 25px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .footer-title {
+        font-size: 14px;
+    }
+
+    .footer-class p {
+        font-size: 12px;
+    }
+
+    .review-description {
+        padding-top: 0;
+    }
+}
